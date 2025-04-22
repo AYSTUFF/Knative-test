@@ -10,6 +10,11 @@ spec:
           name: heartbeats
           args:
             - --period=1
+          env:
+            - name: POD_NAME
+              value: "heartbeats"
+            - name: POD_NAMESPACE
+              value: "default"
   sink:
     ref:
       apiVersion: serving.knative.dev/v1
